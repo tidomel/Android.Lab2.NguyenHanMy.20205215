@@ -1,66 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/retro_beige"
-    tools:context=".MainActivity"
-    >
+    android:background="#F4F6FB"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/second_tv"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/retro_grey2"
+        android:background="#F4F6FB"
         android:gravity="bottom"
         android:maxLines="1"
         android:padding="10dp"
         android:paddingTop="30dp"
         android:text=""
         android:textAlignment="viewEnd"
-        android:textColor="@color/black"
+        android:textColor="#FF000000"
         android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/primary_tv"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/retro_grey2"
         android:layout_below="@id/second_tv"
+        android:background="#F4F6FB"
         android:gravity="bottom"
         android:maxLines="1"
         android:padding="10dp"
         android:text=""
         android:textAlignment="viewEnd"
-        android:textColor="@color/black"
+        android:textColor="#FF000000"
         android:textSize="35sp"
-        tools:ignore="RtlCompat"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        tools:ignore="RtlCompat" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/cardView2"
+        android:layout_width="395dp"
+        android:layout_height="628dp"
         android:layout_below="@id/primary_tv"
-        android:background="@color/retro_beige"
+        android:background="#F4F6FB"
         app:cardCornerRadius="2dp"
         app:cardElevation="2dp"
-        >
-        <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="625dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:id="@+id/linearLayout3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
                 android:orientation="horizontal"
-                >
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
                 <Button
                     android:id="@+id/btn_CE"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -71,10 +80,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="NestedWeights,VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_C"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -85,10 +95,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_BS"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -99,10 +110,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_div"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -113,32 +125,38 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:id="@+id/linearLayout4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:orientation="horizontal"
-                >
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
                 <Button
                     android:id="@+id/btn_7"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
                     android:layout_weight="0.25"
+                    android:background="@drawable/white_button"
                     android:padding="6dp"
                     android:text="@string/_7"
-                    android:background="@drawable/white_button"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="NestedWeights,VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_8"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -149,10 +167,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_9"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -163,10 +182,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_multiple"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -177,17 +197,22 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:id="@+id/linearLayout5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:orientation="horizontal"
-                >
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
                 <Button
                     android:id="@+id/btn_4"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -198,10 +223,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="NestedWeights,VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_5"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -212,10 +238,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_6"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -226,10 +253,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_minus"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -240,18 +268,24 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:id="@+id/linearLayout6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
                 android:orientation="horizontal"
-                >
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
                 <Button
                     android:id="@+id/btn_1"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -262,10 +296,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="NestedWeights,VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_2"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -276,10 +311,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_3"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -290,10 +326,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_plus"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -304,18 +341,23 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:id="@+id/linearLayout7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:orientation="horizontal"
-                >
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
                 <Button
                     android:id="@+id/btn_pi"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -326,10 +368,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="NestedWeights,VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_0"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -340,10 +383,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_dot"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -354,10 +398,11 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
+
                 <Button
                     android:id="@+id/btn_equal"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -368,10 +413,9 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    style="?android:attr/buttonBarButtonStyle"
                     tools:ignore="VisualLintButtonSize" />
             </LinearLayout>
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
